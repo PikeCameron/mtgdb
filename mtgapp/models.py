@@ -23,6 +23,8 @@ class Card(models.Model):
     color = models.CharField(max_length=20, blank=False)
     set = models.CharField(max_length=50, blank=False)
     rarity = models.CharField(max_length=20, blank=False)
+    foil = models.BooleanField()
+    extended = models.BooleanField()
     legendary = models.BooleanField()
     quantity = models.IntegerField(default=0, blank=False)
 
