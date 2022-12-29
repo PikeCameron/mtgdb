@@ -1,0 +1,48 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="text-left">
+        <h2 class="section-heading text-uppercase">Cards</h2>
+    </div>
+    <br>
+    <form name="form" method="post" action="{% url 'updateCard' %}">
+        {% csrf_token %}
+        <input type="hidden" id="card_id" name="card_id" value="{{record.id}}">
+
+        <label for="card_name">Card Name:</label>
+        <input type="text" name="card_name" id="card_name" value="{{record.card_name}}" autofocus>
+        <br><br>
+
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color" value="{{record.color}}">
+        <br><br>
+
+        <label for="set">Set:</label>
+        <input type="text" name="set" id="set" value="{{record.set}}">
+        <br><br>
+
+        <label for="rarity">Rarity:</label>
+        <input type="text" name="rarity" id="rarity" value="{{record.rarity}}">
+        <br><br>
+
+        <label for="foil">Foil:</label>
+        <input type="boolean" name="foil" id="foil" value="{{record.foil}}">
+        <br><br>
+
+        <label for="extended">Extended:</label>
+        <input type="boolean" name="extended" id="extended" value="{{record.extended}}">
+        <br><br>
+
+        <label for="legendary">Legendary:</label>
+        <input type="boolean" name="legendary" id="legendary" value="{{record.legendary}}">
+        <br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" value="{{record.quantity}}">
+        <br><br>
+
+        <button type="submit">Update</button>
+    </form>
+</div>
+{% endblock %}
