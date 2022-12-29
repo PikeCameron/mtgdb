@@ -11,7 +11,6 @@ class Card_Sub_Type(models.Model):
 
 class Card_Type(models.Model):
     type = models.CharField(max_length=30, blank=False)
-    card_sub_type = models.ManyToManyField(Card_Sub_Type, blank=True)
 
     def __str__(self) :
         output = str(self.type)
@@ -20,6 +19,7 @@ class Card_Type(models.Model):
 class Card(models.Model):
     card_name = models.CharField(max_length=45, blank=False)
     card_type = models.ManyToManyField(Card_Type, blank=False)
+    card_sub_type = models.ManyToManyField(Card_Sub_Type, blank=False)
     color = models.CharField(max_length=20, blank=False)
     set = models.CharField(max_length=50, blank=False)
     rarity = models.CharField(max_length=20, blank=False)
