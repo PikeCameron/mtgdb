@@ -14,34 +14,123 @@
         <br><br>
 
         <label for="color">Color:</label>
-        <input type="text" name="color" id="color" value="{{record.color}}">
+        <input type="radio" name="divToggle" data-divid="div1">Show Mono Colors<br>
+        <input type="radio" name="divToggle" data-divid="div2">Show Duel Colors<br>
+        <input type="radio" name="divToggle" data-divid="div3">Show Three Colors<br>
+        <input type="radio" name="divToggle" data-divid="div4">Show Four Colors<br>
+        <input type="radio" name="divToggle" data-divid="div5">WUBRG<br>
+        <div id="div1">
+            <select type="text" name="color" id="color" value="{{record.color}}">
+                <option value="Colorless">Colorless</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+            </select>
+        </div>
+
+        <div id="div2">
+            <select type="text" name="color" id="color" value="{{record.color}}">
+                <option value="Azorius">Azorius (Blue, White)</option>
+                <option value="Golgari">Golgari (Green, Black)</option>
+                <option value="Izzet">Izzet (Red, Blue)</option>
+                <option value="Gruul">Gruul (Red, Green)</option>
+                <option value="Simic">Simic (Green, Blue)</option>
+                <option value="Dimir">Dimir (Blue, Black)</option>
+                <option value="Rakdos">Rakdos (Red, Black)</option>
+                <option value="Boros">Boros (Red, White)</option>
+                <option value="Selesnya">Selesnya (Green, White)</option>
+                <option value="Orzhov">Orzhov (White, Black)</option>
+            </select>
+        </div>
+        
+        <div id="div3">
+            <select type="text" name="color" id="color" value="{{record.color}}">
+                <option value="Esper">Esper (White, Blue, Black)</option>
+                <option value="Grixis">Grixis (Blue, Black, Red)</option>
+                <option value="Jund">Jund (Black, Red, Green)</option>
+                <option value="Naya">Naya (Red, Green, White)</option>
+                <option value="Bant">Bant (Green, White, Blue)</option>
+                <option value="Obscura">Obscura (White, Blue, Black)</option>
+                <option value="Maestros">Maestros (Blue, Black, Red)</option>
+                <option value="Riveteers">Riveteers (Black, Red, Green)</option>
+                <option value="Cabaretti">Cabaretti (Red, Green, White)</option>
+                <option value="Brokers">Brokers (Green, White, Blue)</option>
+                <option value="Abzan">Abzan (White, Black, Green)</option>
+                <option value="Temur">Temur (Blue, Red, Green)</option>
+                <option value="Sultai">Sultai (Blue, Black, Green)</option>
+                <option value="Jeskai">Jeskai (White, Blue, Red)</option>
+                <option value="Mardu">Mardu (White, Black, Red)</option>
+                <option value="Indatha">Indatha (White, Black, Green)</option>
+                <option value="Ketria">Ketria (Blue, Red, Green)</option>
+                <option value="Zagoth">Zagoth (Blue, Black, Green)</option>
+                <option value="Raugrin">Raugrin (White, Blue, Red)</option>
+                <option value="Savai">Savai (White, Black, Red)</option>
+            </select>
+        </div>
+
+        <div id="div4">
+            <select type="text" name="color" id="color" value="{{record.color}}">
+                <option value="Glint">Glint (Blue, Black, Red, Green)</option>
+                <option value="Dune">Dune (White, Black, Red, Green)</option>
+                <option value="Ink">Ink (White, Blue, Red, Green)</option>
+                <option value="Witch">Witch (White, Blue, Black, Green)</option>
+                <option value="Yore">Yore (White, Blue, Black, Red)</option>
+            </select>
+        </div>
+
+        <div id="div5">
+            <select type="text" name="color" id="color" value="{{record.color}}">
+                <option value="WUBRG">WUBRG</option>
+            </select>
+        </div>
         <br><br>
 
-        <label for="set">Set:</label>
-        <input type="text" name="set" id="set" value="{{record.set}}">
+        <label for="rarity">Rartiy:</label>
+        <select type="text" name="rarity" id="rarity" value="{{record.rarity}}">
+            <option value="Common">Common</option>
+            <option value="Uncommon">Uncommon</option>
+            <option value="Rare">Rare</option>
+            <option value="Mythic">Mythic</option>
+        </select>
         <br><br>
 
-        <label for="rarity">Rarity:</label>
-        <input type="text" name="rarity" id="rarity" value="{{record.rarity}}">
+        <label for="foil">Foil or Non-Foil: </label>
+        <input type="radio" name="foil" id="foil_true" value=True>
+        <label for="foil_true">Foil</label>
+        <input type="radio" name="foil" id="foil_false" value=False checked>
+        <label for="foil_false">Non-Foil</label>
         <br><br>
 
-        <label for="foil">Foil:</label>
-        <input type="boolean" name="foil" id="foil" value="{{record.foil}}">
+        <label for="extended">Extended or Not: </label>
+        <input type="radio" name="extended" id="extended_true" value=True>
+        <label for="extended_true">Extended</label>
+        <input type="radio" name="extended" id="extended_false" value=False checked>
+        <label for="extended_false">Non-Extended</label>
         <br><br>
 
-        <label for="extended">Extended:</label>
-        <input type="boolean" name="extended" id="extended" value="{{record.extended}}">
+        <label for="retro">Retro or Not: </label>
+        <input type="radio" name="retro" id="retro_true" value=True>
+        <label for="retro_true">Retro</label>
+        <input type="radio" name="retro" id="retro_false" value=False checked>
+        <label for="retro_false">Not Retro</label>
         <br><br>
 
-        <label for="legendary">Legendary:</label>
-        <input type="boolean" name="legendary" id="legendary" value="{{record.legendary}}">
+        <label for="legendary">Legendary or Not: </label>
+        <input type="radio" name="legendary" id="legendary_true" value=True>
+        <label for="legendary">Legendary</label>
+        <input type="radio" name="legendary" id="legendary_false" value=False checked>
+        <label for="legendary_false">Non-Legendary</label>
         <br><br>
 
         <label for="quantity">Quantity:</label>
         <input type="number" name="quantity" id="quantity" value="{{record.quantity}}">
         <br><br>
 
-        <button type="submit">Add</button>
+        <button type="submit">Next</button>
     </form>
+
+    <script src="{% static '/js/scripts.js' %}"></script>
 </div>
 {% endblock %}

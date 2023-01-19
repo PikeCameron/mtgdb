@@ -1,0 +1,33 @@
+
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+        <!-- Masthead-->
+        <header class="masthead">
+                <div class="masthead-heading text-uppercase">MTG Database</div>
+        </header>
+        <div class="container" style="text-align:center">
+            <h1>Here's a list of the card sub types</h1>
+            <div style="text-align:center">
+                <table>
+                    <th></th><th>Card Sub Types</th><th></th>
+                
+                {% for sub_type in sub_type %}
+                
+                <tr style='text-align:center; margin-left:2px;'>
+                    <td>
+                        {{ sub_type.sub_type }}
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'deleteSub' card_sub_type_id=sub_type.id %}">Remove</a>
+                    </td>
+                </tr>
+    
+                {% endfor %}
+                </table>
+            </div>
+            
+            <br>
+            <a class="btn btn-primary" href="{% url 'addSub' %}">Add Sub Type</a>
+        </div>
+{% endblock %}

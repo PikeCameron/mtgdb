@@ -1,0 +1,28 @@
+
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+        <!-- Masthead-->
+        <header class="masthead">
+                <div class="masthead-heading text-uppercase">MTG Database</div>
+        </header>
+        <div class="container" style="text-align:center">
+            <h1>Here's a list of the cards</h1>
+            {% for type in type %}
+            <p>{{ type.type }}</p>
+            {% endfor %}
+    
+            <form name="form" method="post" action="{% url 'addToCardType' %}">
+                {% csrf_token %}
+    
+                <label for="card_type">Select the card type to add:</label>
+                <select type="text" name="card_type" id="card_type">
+                    {% for type in type %}
+                    <option value="{{ type.id }}">{{ type.type }}</option>
+                    {% endfor %}
+                </select>
+    
+                <button type="submit">Next</button>
+            </form>
+        </div>
+{% endblock %}

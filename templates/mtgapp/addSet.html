@@ -1,0 +1,19 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="text-left">
+        <h2 class="section-heading text-uppercase">Add Set</h2>
+    </div>
+    <br>
+    <form name="form" method="post" action="{% url 'addSet' %}">
+        {% csrf_token %}
+
+        <label for="set">Card Set:</label>
+        <input type="text" name="set" id="set" value="{{set.title}}" autofocus>
+        <br><br>
+
+        <button type="submit">Add</button>
+    </form>
+</div>
+{% endblock %}

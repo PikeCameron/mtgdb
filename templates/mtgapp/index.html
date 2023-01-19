@@ -4,28 +4,25 @@
 {% block content %}
         <!-- Masthead-->
         <header class="masthead">
-                <div class="masthead-heading text-uppercase">MTG Database</div>
+            <div class="masthead-heading text-uppercase">MTG Database</div>
         </header>
         <div class="container" style="text-align:center">
             <h1>Here's a list of the cards</h1>
             <div style="text-align:center">
                 <table>
-                    <th></th><th>Card Name</th><th>Color</th><th>Set</th><th>Rarity</th><th>Foil</th><th>Extended</th><th>Legendary</th><th>Quantity</th><th></th>
+                    <th></th><th>Card Name</th><th>Color</th><th>Rarity</th><th>Foil</th><th>Extended</th><th>Retro</th><th>Legendary</th><th>Quantity</th><th></th>
                 
                 {% for card in card %}
                 
                 <tr style='text-align:center; margin-left:2px;'>
                     <td>
-                        <a class="btn btn-primary" href="{% url 'showSingleCard' card_id=card.id %}">Edit</a>
+                        <a class="btn btn-primary" href="{% url 'showSingleCard' card_id=card.id %}">See Card</a>
                     </td>
                     <td>
                         {{ card.card_name }}
                     </td>
                     <td>
                         {{ card.color }}
-                    </td>
-                    <td>
-                        {{ card.set }}
                     </td>
                     <td>
                         {{ card.rarity }}
@@ -35,6 +32,9 @@
                     </td>
                     <td>
                         {{ card.extended }}
+                    </td>
+                    <td>
+                        {{ card.retro }}
                     </td>
                     <td>
                         {{ card.legendary }}
@@ -52,6 +52,6 @@
             </div>
             
             <br>
-            <a class="btn btn-primary" href="{% url 'addCard' %}">New Card</a>
+            <a class="btn btn-primary" href="{% url 'addCard' %}">Add a Card</a>
         </div>
 {% endblock %}

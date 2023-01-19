@@ -3,39 +3,48 @@
 {% block content %}
 <div class="container">
     <div class="text-left">
-        <h2 class="section-heading text-uppercase">Cards</h2>
+        <h2 class="section-heading text-uppercase">{{record.card_name}}</h2>
     </div>
     <br>
     <form name="form" method="post" action="{% url 'updateCard' %}">
         {% csrf_token %}
         <input type="hidden" id="card_id" name="card_id" value="{{record.id}}">
 
-        <label for="card_name">Card Name:</label>
-        <input type="text" name="card_name" id="card_name" value="{{record.card_name}}" autofocus>
+        <label for="card_name">Card Name: {{record.card_name}}</label>
         <br><br>
 
-        <label for="color">Color:</label>
-        <input type="text" name="color" id="color" value="{{record.color}}">
+        <label for="color">Color: {{record.color}}</label>
         <br><br>
 
-        <label for="set">Set:</label>
-        <input type="text" name="set" id="set" value="{{record.set}}">
+        <label for="rarity">Rartiy: {{record.rarity}}</label>
         <br><br>
 
-        <label for="rarity">Rarity:</label>
-        <input type="text" name="rarity" id="rarity" value="{{record.rarity}}">
+        {% if record.foil == True %}
+            <label for="foil">Foil</label>
+        {% else %}
+        <label for="foil">-</label>
+        {% endif %}
         <br><br>
 
-        <label for="foil">Foil:</label>
-        <input type="boolean" name="foil" id="foil" value="{{record.foil}}">
+        {% if record.extended == True %}
+            <label for="extended">Extended</label>
+        {% else %}
+        <label for="extended">-</label>
+        {% endif %}
         <br><br>
 
-        <label for="extended">Extended:</label>
-        <input type="boolean" name="extended" id="extended" value="{{record.extended}}">
+        {% if record.retro == True %}
+            <label for="retro">Retro Frame</label>
+        {% else %}
+            <label for="retro">-</label>
+        {% endif %}
         <br><br>
 
-        <label for="legendary">Legendary:</label>
-        <input type="boolean" name="legendary" id="legendary" value="{{record.legendary}}">
+        {% if record.legendary == True %}
+            <label for="legendary">Legendary</label>
+        {% else %}
+            <label for="legendary">-</label>
+        {% endif %}
         <br><br>
 
         <label for="quantity">Quantity:</label>
@@ -44,5 +53,63 @@
 
         <button type="submit">Update</button>
     </form>
+
+    <label><b>Set</b></label>
+    {% for set in set %}
+    <p>{{ set.title }}</p>
+    {% endfor %}
+
+    <form name="form" method="post" action="{% url 'addCardSet' %}">
+        {% csrf_token %}
+        <input type="hidden" id="card_id" name="card_id" value="{{record.id}}">
+
+        <label for="card_set">Select the card set:</label>
+        <select type="text" name="card_set" id="card_set">
+            {% for set in avail3 %}
+            <option value="{{ set.id }}">{{ set.title }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Add Card Set</button>
+    </form>
+
+    <label><b>Card Type(s)</b></label>
+    {% for type in type %}
+    <p>{{ type.type }}</p>
+    {% endfor %}
+
+    <form name="form" method="post" action="{% url 'addCardCardType' %}">
+        {% csrf_token %}
+        <input type="hidden" id="card_id" name="card_id" value="{{record.id}}">
+
+        <label for="card_type">Select the card type to add:</label>
+        <select type="text" name="card_type" id="card_type">
+            {% for type in avail %}
+            <option value="{{ type.id }}">{{ type.type }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Add Card Type</button>
+    </form>
+
+    <label><b>Card Sub Type(s)</b></label>
+    {% for sub_type in sub_type %}
+    <p>{{ sub_type.sub_type }}</p>
+    {% endfor %}
+
+    <form name="form" method="post" action="{% url 'addCardCardSubType' %}">
+        {% csrf_token %}
+        <input type="hidden" id="card_id" name="card_id" value="{{record.id}}">
+
+        <label for="card_sub_type">Select the card sub type to add:</label>
+        <select type="text" name="card_sub_type" id="card_sub_type">
+            {% for sub_type in avail2 %}
+            <option value="{{ sub_type.id }}">{{ sub_type.sub_type }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Add Card Sub Type</button>
+    </form>
+
 </div>
 {% endblock %}
