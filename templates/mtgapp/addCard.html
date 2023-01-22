@@ -13,80 +13,46 @@
         <input type="text" name="card_name" id="card_name" value="{{record.card_name}}" autofocus>
         <br><br>
 
-        <label for="color">Color:</label>
-        <input type="radio" name="divToggle" data-divid="div1">Show Mono Colors<br>
-        <input type="radio" name="divToggle" data-divid="div2">Show Duel Colors<br>
-        <input type="radio" name="divToggle" data-divid="div3">Show Three Colors<br>
-        <input type="radio" name="divToggle" data-divid="div4">Show Four Colors<br>
-        <input type="radio" name="divToggle" data-divid="div5">WUBRG<br>
-        <div id="div1">
-            <select type="text" name="color" id="color" value="{{record.color}}">
-                <option value="Colorless">Colorless</option>
-                <option value="Black">Black</option>
-                <option value="White">White</option>
-                <option value="Red">Red</option>
-                <option value="Green">Green</option>
-                <option value="Blue">Blue</option>
-            </select>
-        </div>
+        <label for="color">Color:</label><br>
+        <select type="text" name="color" id="color" value="{{record.color}}">
+            <option class="Colorless" value="Colorless">Colorless </option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
 
-        <div id="div2">
-            <select type="text" name="color" id="color" value="{{record.color}}">
-                <option value="Azorius">Azorius (Blue, White)</option>
-                <option value="Golgari">Golgari (Green, Black)</option>
-                <option value="Izzet">Izzet (Red, Blue)</option>
-                <option value="Gruul">Gruul (Red, Green)</option>
-                <option value="Simic">Simic (Green, Blue)</option>
-                <option value="Dimir">Dimir (Blue, Black)</option>
-                <option value="Rakdos">Rakdos (Red, Black)</option>
-                <option value="Boros">Boros (Red, White)</option>
-                <option value="Selesnya">Selesnya (Green, White)</option>
-                <option value="Orzhov">Orzhov (White, Black)</option>
-            </select>
-        </div>
-        
-        <div id="div3">
-            <select type="text" name="color" id="color" value="{{record.color}}">
-                <option value="Esper">Esper (White, Blue, Black)</option>
-                <option value="Grixis">Grixis (Blue, Black, Red)</option>
-                <option value="Jund">Jund (Black, Red, Green)</option>
-                <option value="Naya">Naya (Red, Green, White)</option>
-                <option value="Bant">Bant (Green, White, Blue)</option>
-                <option value="Obscura">Obscura (White, Blue, Black)</option>
-                <option value="Maestros">Maestros (Blue, Black, Red)</option>
-                <option value="Riveteers">Riveteers (Black, Red, Green)</option>
-                <option value="Cabaretti">Cabaretti (Red, Green, White)</option>
-                <option value="Brokers">Brokers (Green, White, Blue)</option>
-                <option value="Abzan">Abzan (White, Black, Green)</option>
-                <option value="Temur">Temur (Blue, Red, Green)</option>
-                <option value="Sultai">Sultai (Blue, Black, Green)</option>
-                <option value="Jeskai">Jeskai (White, Blue, Red)</option>
-                <option value="Mardu">Mardu (White, Black, Red)</option>
-                <option value="Indatha">Indatha (White, Black, Green)</option>
-                <option value="Ketria">Ketria (Blue, Red, Green)</option>
-                <option value="Zagoth">Zagoth (Blue, Black, Green)</option>
-                <option value="Raugrin">Raugrin (White, Blue, Red)</option>
-                <option value="Savai">Savai (White, Black, Red)</option>
-            </select>
-        </div>
+            <option value="Azorius">Azorius (White, Blue)</option>
+            <option value="Golgari">Golgari (Black, Green)</option>
+            <option value="Izzet">Izzet (Blue, Red)</option>
+            <option value="Gruul">Gruul (Red, Green)</option>
+            <option value="Simic">Simic (Green, Blue)</option>
+            <option value="Dimir">Dimir (Blue, Black)</option>
+            <option value="Rakdos">Rakdos (Black, Red)</option>
+            <option value="Boros">Boros (Red, White)</option>
+            <option value="Selesnya">Selesnya (Green, White)</option>
+            <option value="Orzhov">Orzhov (White, Black)</option>
 
-        <div id="div4">
-            <select type="text" name="color" id="color" value="{{record.color}}">
-                <option value="Glint">Glint (Blue, Black, Red, Green)</option>
-                <option value="Dune">Dune (White, Black, Red, Green)</option>
-                <option value="Ink">Ink (White, Blue, Red, Green)</option>
-                <option value="Witch">Witch (White, Blue, Black, Green)</option>
-                <option value="Yore">Yore (White, Blue, Black, Red)</option>
-            </select>
-        </div>
+            <option value="Esper">Esper (White, Blue, Black)</option>
+            <option value="Grixis">Grixis (Blue, Black, Red)</option>
+            <option value="Jund">Jund (Black, Red, Green)</option>
+            <option value="Naya">Naya (Red, Green, White)</option>
+            <option value="Bant">Bant (Green, White, Blue)</option>
+            <option value="Abzan">Abzan (White, Black, Green)</option>
+            <option value="Temur">Temur (Green, Blue, Red)</option>
+            <option value="Sultai">Sultai (Black, Green, Blue)</option>
+            <option value="Jeskai">Jeskai (Blue, Red, White)</option>
+            <option value="Mardu">Mardu (Red, White, Black)</option>
 
-        <div id="div5">
-            <select type="text" name="color" id="color" value="{{record.color}}">
-                <option value="WUBRG">WUBRG</option>
-            </select>
-        </div>
+            <option value="Glint">Glint (Blue, Black, Red, Green)</option>
+            <option value="Dune">Dune (White, Black, Red, Green)</option>
+            <option value="Ink">Ink (White, Blue, Red, Green)</option>
+            <option value="Witch">Witch (White, Blue, Black, Green)</option>
+            <option value="Yore">Yore (White, Blue, Black, Red)</option>
+
+            <option value="WUBRG">WUBRG</option>
+        </select>
         <br><br>
-
         <label for="rarity">Rartiy:</label>
         <select type="text" name="rarity" id="rarity" value="{{record.rarity}}">
             <option value="Common">Common</option>

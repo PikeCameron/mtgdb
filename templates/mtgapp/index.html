@@ -3,9 +3,6 @@
 {% load static %}
 {% block content %}
         <!-- Masthead-->
-        <header class="masthead">
-            <div class="masthead-heading text-uppercase">MTG Database</div>
-        </header>
         <div class="container" style="text-align:center">
             <h1>Here's a list of the cards</h1>
             <div style="text-align:center">
@@ -22,28 +19,176 @@
                         {{ card.card_name }}
                     </td>
                     <td>
-                        {{ card.color }}
+                        {% if card.color == 'Colorless' %}
+                        <img src="{% static 'img/Colorless.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Black' %}
+                        <img src="{% static 'img/Black.png'%}" width="5%">
+                        
+                    {% elif card.color == 'White' %}
+                        <img src="{% static 'img/White.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Red' %}
+                        <img src="{% static 'img/Red.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Green' %}
+                        <img src="{% static 'img/Green.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Blue' %}
+                        <img src="{% static 'img/Blue.png'%}" width="5%">
+                      
+                    {% elif card.color == 'Azorius' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Golgari' %}
+                        <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Izzet' %}
+                        <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Gruul' %}
+                        <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Simic' %}
+                        <img src="{% static 'img/Green.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                    
+                    {% elif card.color == 'Dimir' %}
+                        <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Rakdos' %}
+                        <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Boros' %}
+                        <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/White.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Selesnya' %}
+                        <img src="{% static 'img/Green.png'%}" width="5%"><img src="{% static 'img/White.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Orzhov' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Esper' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                            <img src="{% static 'img/Black.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Grixis' %}
+                        <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                            <img src="{% static 'img/Red.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Jund' %}
+                        <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                            <img src="{% static 'img/Green.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Naya' %}
+                        <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                            <img src="{% static 'img/White.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Bant' %}
+                        <img src="{% static 'img/Green.png'%}" width="5%"><img src="{% static 'img/White.png'%}" width="5%">
+                            <img src="{% static 'img/Blue.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Abzan' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                            <img src="{% static 'img/Green.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Temur' %}
+                        <img src="{% static 'img/Green.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                            <img src="{% static 'img/Red.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Sultai' %}
+                        <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                            <img src="{% static 'img/White.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Jeskai' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                            <img src="{% static 'img/Red.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Mardu' %}
+                        <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/White.png'%}" width="5%">
+                            <img src="{% static 'img/Black.png'%}" width="5%">
+                        
+                    {% elif card.color == 'Glint' %}
+                        <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                            <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Dune' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                            <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Ink' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                            <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Witch' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                            <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                       
+                    {% elif card.color == 'Yore' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                            <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                       
+                    {% elif card.color == 'WUBRG' %}
+                        <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                            <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                            <img src="{% static 'img/Green.png'%}" width="5%">
+                        
+                    {% else %}
+                        -
+                    {% endif %}
+                    </td>
+                    {% if card.rarity == 'Mythic' %}
+                    <td style="color: #FF7A0E;">
+                        M
+                    </td>
+                    {% elif card.rarity == 'Rare' %}
+                    <td style="color: gold;">
+                        R
+                    </td>
+                    {% elif card.rarity == 'Uncommon' %}
+                    <td style="color: silver;">
+                        U
+                    </td>
+                    {% else %}
+                    <td style="color: black;">
+                        C
+                    </td>
+                    {% endif %}
+                    <td>
+                        {% if card.foil == True %}
+                        <img src="{% static 'img/Foil.png'%}" width="15%">
+                        {% else %}
+                        -
+                        {% endif %}
                     </td>
                     <td>
-                        {{ card.rarity }}
+                        {% if card.extended == True %}
+                        <label for="extended">Extended</label>
+                        {% else %}
+                        <label for="extended">-</label>
+                        {% endif %}
                     </td>
                     <td>
-                        {{ card.foil }}
+                        {% if card.retro == True %}
+                            <label for="retro">Retro</label>
+                        {% else %}
+                            <label for="retro">-</label>
+                        {% endif %}
                     </td>
                     <td>
-                        {{ card.extended }}
-                    </td>
-                    <td>
-                        {{ card.retro }}
-                    </td>
-                    <td>
-                        {{ card.legendary }}
+                        {% if card.legendary == True %}
+                            <label for="legendary">Legendary</label>
+                        {% else %}
+                            <label for="legendary">-</label>
+                        {% endif %}
                     </td>
                     <td>
                         {{ card.quantity }}
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{% url 'deleteCard' card_id=card.id %}">Delete</a>
+                        <a class="btn btn-primary" style="color:Pink" href="{% url 'deleteCard' card_id=card.id %}">Delete</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" style="font-size:10px" href="https://www.cardkingdom.com/catalog/search?search=header&filter%5Bname%5D={{card.card_name}}" target="_blank">View Card on Cardkingdom</a>
                     </td>
                 </tr>
     
@@ -52,6 +197,6 @@
             </div>
             
             <br>
-            <a class="btn btn-primary" href="{% url 'addCard' %}">Add a Card</a>
+            <a class="btn btn-primary" style="color:Lime" href="{% url 'addCard' %}">Add a Card</a>
         </div>
 {% endblock %}

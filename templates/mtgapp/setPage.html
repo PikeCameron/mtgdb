@@ -3,9 +3,6 @@
 {% load static %}
 {% block content %}
         <!-- Masthead-->
-        <header class="masthead">
-                <div class="masthead-heading text-uppercase">MTG Database</div>
-        </header>
         <div class="container" style="text-align:center">
             <h1>Here's a list of the sets</h1>
             <div style="text-align:center">
@@ -19,7 +16,7 @@
                         {{ set.title }}
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{% url 'deleteSet' set_id=set.id %}">Remove</a>
+                        <a class="btn btn-primary" style="color:Pink" href="{% url 'deleteSet' set_id=set.id %}">Remove</a>
                     </td>
                 </tr>
     
@@ -28,6 +25,6 @@
             </div>
             
             <br>
-            <a class="btn btn-primary" href="{% url 'addSet' %}">Add Set</a>
+            <a class="btn btn-primary" style="color:Lime" href="{% url 'addSet' %}">Add Set</a>
         </div>
 {% endblock %}

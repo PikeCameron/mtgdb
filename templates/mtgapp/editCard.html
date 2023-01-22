@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
     <div class="text-left">
-        <h2 class="section-heading text-uppercase">{{record.card_name}}</h2>
+        <h2 class="section-heading text-uppercase"><a href="https://www.cardkingdom.com/catalog/search?search=header&filter%5Bname%5D={{record.card_name}}" target="_blank">{{record.card_name}}</a></h2>
     </div>
     <br>
     <form name="form" method="post" action="{% url 'updateCard' %}">
@@ -14,20 +14,135 @@
         <br><br>
 
         <label for="color">Color: {{record.color}}</label>
-        <br><br>
+        {% if record.color == 'Colorless' %}
+            <img src="{% static 'img/Colorless.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Black' %}
+            <img src="{% static 'img/Black.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'White' %}
+            <img src="{% static 'img/White.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Red' %}
+            <img src="{% static 'img/Red.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Green' %}
+            <img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Blue' %}
+            <img src="{% static 'img/Blue.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Azorius' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Golgari' %}
+            <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Izzet' %}
+            <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Gruul' %}
+            <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Simic' %}
+            <img src="{% static 'img/Green.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Dimir' %}
+            <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Rakdos' %}
+            <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Boros' %}
+            <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/White.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Selesnya' %}
+            <img src="{% static 'img/Green.png'%}" width="5%"><img src="{% static 'img/White.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Orzhov' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Esper' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                <img src="{% static 'img/Black.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Grixis' %}
+            <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                <img src="{% static 'img/Red.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Jund' %}
+            <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                <img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Naya' %}
+            <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                <img src="{% static 'img/White.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Bant' %}
+            <img src="{% static 'img/Green.png'%}" width="5%"><img src="{% static 'img/White.png'%}" width="5%">
+                <img src="{% static 'img/Blue.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Abzan' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                <img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Temur' %}
+            <img src="{% static 'img/Green.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                <img src="{% static 'img/Red.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Sultai' %}
+            <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+                <img src="{% static 'img/Blue.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Jeskai' %}
+            <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                <img src="{% static 'img/White.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Mardu' %}
+            <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/White.png'%}" width="5%">
+                <img src="{% static 'img/Black.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Glint' %}
+            <img src="{% static 'img/Blue.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Dune' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Black.png'%}" width="5%">
+                <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Ink' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                <img src="{% static 'img/Red.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Witch' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'Yore' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+            <br><br>
+        {% elif record.color == 'WUBRG' %}
+            <img src="{% static 'img/White.png'%}" width="5%"><img src="{% static 'img/Blue.png'%}" width="5%">
+                <img src="{% static 'img/Black.png'%}" width="5%"><img src="{% static 'img/Red.png'%}" width="5%">
+                <img src="{% static 'img/Green.png'%}" width="5%">
+            <br><br>
+        {% else %}
+            <br><br>
+        {% endif %}
 
         <label for="rarity">Rartiy: {{record.rarity}}</label>
         <br><br>
 
         {% if record.foil == True %}
-            <label for="foil">Foil</label>
+        <img src="{% static 'img/Foil.png'%}" width="5%">
         {% else %}
-        <label for="foil">-</label>
+        -
         {% endif %}
         <br><br>
 
         {% if record.extended == True %}
-            <label for="extended">Extended</label>
+        <label for="extended">Extended</label>
         {% else %}
         <label for="extended">-</label>
         {% endif %}
@@ -110,6 +225,8 @@
 
         <button type="submit">Add Card Sub Type</button>
     </form>
+
+    <a class="btn btn-primary" href="{% url 'index' %}">Return Home</a></li>
 
 </div>
 {% endblock %}

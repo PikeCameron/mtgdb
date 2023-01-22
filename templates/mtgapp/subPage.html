@@ -3,9 +3,6 @@
 {% load static %}
 {% block content %}
         <!-- Masthead-->
-        <header class="masthead">
-                <div class="masthead-heading text-uppercase">MTG Database</div>
-        </header>
         <div class="container" style="text-align:center">
             <h1>Here's a list of the card sub types</h1>
             <div style="text-align:center">
@@ -19,7 +16,7 @@
                         {{ sub_type.sub_type }}
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{% url 'deleteSub' card_sub_type_id=sub_type.id %}">Remove</a>
+                        <a class="btn btn-primary" style="color:Pink" href="{% url 'deleteSub' card_sub_type_id=sub_type.id %}">Remove</a>
                     </td>
                 </tr>
     
@@ -28,6 +25,6 @@
             </div>
             
             <br>
-            <a class="btn btn-primary" href="{% url 'addSub' %}">Add Sub Type</a>
+            <a class="btn btn-primary" style="color:Lime" href="{% url 'addSub' %}">Add Sub Type</a>
         </div>
 {% endblock %}
